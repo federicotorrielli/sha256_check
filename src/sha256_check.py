@@ -19,8 +19,7 @@ if __name__ == '__main__':
                 sha256_hash.update(byte_block)
             main([sha256_hash.hexdigest(), sys.argv[2]])
     except IndexError:
-        print(Fore.RED + 'Whoopsie! Something went wrong...\n' + Fore.BLUE + 'Usage: python sha256_check *file* '
-                                                                             '*sha256*')
+        print(Fore.RED + 'Whoopsie! Something went wrong...\n' + Fore.BLUE + 'Usage: python sha256_check *file* *sha256*')
     except OSError as err:
         print(err)
     print(Style.RESET_ALL)
