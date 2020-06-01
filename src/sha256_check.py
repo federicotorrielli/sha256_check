@@ -6,9 +6,9 @@ import sys
 
 def main(argv):
     if argv.count(argv[0]) == len(argv):
-        print(Fore.GREEN + 'Gli hash sono identici')
+        print(Fore.GREEN + 'Hash are identical')
     else:
-        print(Fore.RED + 'Gli hash sono differenti')
+        print(Fore.RED + 'Hash are different')
 
 
 if __name__ == '__main__':
@@ -19,7 +19,8 @@ if __name__ == '__main__':
                 sha256_hash.update(byte_block)
             main([sha256_hash.hexdigest(), sys.argv[2]])
     except IndexError:
-        print(Fore.RED + 'Qualcosa è andato storto!\n' + Fore.BLUE + 'Usage: python sha256_check *file* *sha256*')
+        print(Fore.RED + 'Whoopsie! Something went wrong...\n' + Fore.BLUE + 'Usage: python sha256_check *file* '
+                                                                             '*sha256*')
     except OSError as err:
         print(err)
     print(Style.RESET_ALL)
