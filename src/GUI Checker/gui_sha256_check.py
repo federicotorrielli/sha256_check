@@ -7,9 +7,9 @@ import os
 
 def main(argv):
     if argv == txtfld.get():
-        finalLbl.config(fg='green',text="HASH CORREC")
+        finalLbl.config(fg='green',text="Hash are identical")
     else:
-        finalLbl.config(fg='red',text="HASH DIVERSI")
+        finalLbl.config(fg='red',text="Hash are different")
 
 def search_for_file_path ():
     currdir = os.getcwd()
@@ -34,9 +34,9 @@ window=Tk()
 window.columnconfigure(0, weight=1)
 
 btn=Button(window,width="20",height="2",text="Choose Path", fg='black',command=search_for_file_path)
-end = Button(window, width="20", height="2", text="Close", fg='black',command=window.destroy)
+end = Button(window, width="20", height="2", text="Close Window", fg='black',command=window.destroy)
 finalLbl=Label(window, text="", font=("TimesNewRoman", 20))
-lbl = Label(window, text= "Hash da controllare:")
+lbl = Label(window, text= "Hash to compare:")
 txtfld=Entry(window, bd=2)
 
 window.title('SHA-256 Checker')
