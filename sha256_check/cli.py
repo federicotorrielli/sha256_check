@@ -7,6 +7,7 @@ import sys
 from .gui_sha256_check import gui_check
 from .sha256_check import sha256_check, ERROR_MSG
 
+
 def main():
     """parses command line params and runs appropriate function"""
     if len(sys.argv) == 1:
@@ -15,5 +16,5 @@ def main():
 
     if sys.argv[1] in ["--gui", "-g"]:
         gui_check()
-    else: 
+    else:
         sha256_check()

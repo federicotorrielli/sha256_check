@@ -30,8 +30,11 @@ def search_for_file_path():
             print(err)
     return tempdir
 
+
 def gui_check():
     """Runs the gui"""
+    global window, txt_field, btn, end, finalLbl, lbl
+
     window = Tk()
     window.columnconfigure(0, weight=1)
 

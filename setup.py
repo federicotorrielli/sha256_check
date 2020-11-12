@@ -6,8 +6,8 @@ with open("README.md", "r") as fh:
 setuptools.setup(
     name="sha256_check",
     author="federicotorrielli",
-    # author_email="github.com/federicotorrielli",
-    description="quick SHA256 hash check",
+    author_email="evilscript@protonmail.com",
+    description="Quick SHA256 hash check",
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/federicotorrielli/sha256_check",
@@ -22,6 +22,6 @@ setuptools.setup(
             "sha256_check = sha256_check.cli:main"
         ]
     },
-    python_requires='>=3.4',
+    python_requires='>=3.6',
     install_requires=["colorama>=0.4.3"]
 )

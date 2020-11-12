@@ -2,13 +2,13 @@ from hashlib import sha256
 from colorama import Fore, Style
 import sys
 
-
 # made by EvilScript
 ERROR_MSG = (
-    Fore.RED + 'Whoopsie! Something went wrong...\n' 
-    + Fore.BLUE + 'Usage: python sha256_check *file* *sha256*\n'
-    "Or sha256_check --gui "
+        Fore.RED + 'Whoopsie! Something went wrong...\n'
+        + Fore.BLUE + 'Usage: python sha256_check *file* *sha256*\n'
+                      "Or sha256_check --gui "
 )
+
 
 def main(argv):
     if argv.count(argv[0]) == len(argv):
