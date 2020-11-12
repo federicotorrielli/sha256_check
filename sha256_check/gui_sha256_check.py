@@ -30,22 +30,23 @@ def search_for_file_path():
             print(err)
     return tempdir
 
+def gui_check():
+    """Runs the gui"""
+    window = Tk()
+    window.columnconfigure(0, weight=1)
 
-window = Tk()
-window.columnconfigure(0, weight=1)
+    btn = Button(window, width="20", height="2", text="Choose Path", fg='black', command=search_for_file_path)
+    end = Button(window, width="20", height="2", text="Close Window", fg='black', command=window.destroy)
+    finalLbl = Label(window, text="", font=("TimesNewRoman", 20))
+    lbl = Label(window, text="Hash to compare:")
+    txt_field = Entry(window, bd=2)
 
-btn = Button(window, width="20", height="2", text="Choose Path", fg='black', command=search_for_file_path)
-end = Button(window, width="20", height="2", text="Close Window", fg='black', command=window.destroy)
-finalLbl = Label(window, text="", font=("TimesNewRoman", 20))
-lbl = Label(window, text="Hash to compare:")
-txt_field = Entry(window, bd=2)
+    window.title('SHA-256 Checker')
+    window.resizable(False, False)
 
-window.title('SHA-256 Checker')
-window.resizable(False, False)
-
-finalLbl.grid(row=0, column=0, columnspan=2, sticky=W, padx=20, pady=20)
-lbl.grid(row=1, column=0, sticky=W, padx=20, pady=20)
-txt_field.grid(row=1, column=1, sticky=W, padx=20, pady=20)
-btn.grid(row=2, column=0, sticky=W, padx=20, pady=20)
-end.grid(row=2, column=1, sticky=W, padx=20, pady=20)
-window.mainloop()
+    finalLbl.grid(row=0, column=0, columnspan=2, sticky=W, padx=20, pady=20)
+    lbl.grid(row=1, column=0, sticky=W, padx=20, pady=20)
+    txt_field.grid(row=1, column=1, sticky=W, padx=20, pady=20)
+    btn.grid(row=2, column=0, sticky=W, padx=20, pady=20)
+    end.grid(row=2, column=1, sticky=W, padx=20, pady=20)
+    window.mainloop()
