@@ -2,31 +2,33 @@ from hashlib import sha256
 from colorama import Fore, Style
 import sys
 
-# made by EvilScript
-ERROR_MSG = (
-        Fore.RED + 'Whoopsie! Something went wrong...\n'
-        + Fore.BLUE + 'Usage: python sha256_check *file* *sha256*\n'
-                      "Or sha256_check --gui "
-)
+# Made by Federico Torrielli
 
+def check_sha256(filename, hash):
+    """
+    Given a filename and a sha256 hash, print 'Hash is identical' if the hashes are the same,
+    or 'Hash is different' otherwise.
+    """
+    with open(filename, 'rb') as f:
+        data = f.read()
+        if sha256(data).hexdigest() == hash:
+            print(Fore.GREEN + 'Hash is identical')
+        else:
+            print(Fore.RED + 'Hash is different')
 
-def main(argv):
-    if argv.count(argv[0]) == len(argv):
-        print(Fore.GREEN + 'Hash are identical')
-    else:
-        print(Fore.RED + 'Hash are different')
-
-
-def sha256_check():
-    sha256_hash = sha256()
+def main():
+    """
+    Checks if the program was run with the correct number of arguments,
+    if not, prints an error message and exits.
+    """
     try:
-        with open(sys.argv[1], "rb") as f:
-            for byte_block in iter(lambda: f.read(4096), b""):
-                sha256_hash.update(byte_block)
-            main([sha256_hash.hexdigest(), sys.argv[2]])
+        check_sha256(sys.argv[1], sys.argv[2])
     except IndexError:
-        print(ERROR_MSG)
-
+        print(Fore.RED + 'Whoopsie! Something went wrong...\n' + Fore.BLUE
+        + 'Usage: python sha256_check *file* *sha256*')
     except OSError as err:
         print(err)
     print(Style.RESET_ALL)
+
+if __name__ == '__main__':
+    main()

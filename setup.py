@@ -7,7 +7,7 @@ setuptools.setup(
     name="sha256_check",
     author="federicotorrielli",
     author_email="evilscript@protonmail.com",
-    version="0.2",
+    version="0.3",
     description="Quick SHA256 hash check",
     long_description=long_description,
     long_description_content_type="text/markdown",
